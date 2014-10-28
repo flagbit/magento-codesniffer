@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="flagbit-magento-ruleset">
+    <description>Coding Guidelines for Magento development within the Flagbit team.</description>
+
+    <!-- a class or interface must not be defined in multiple files -->
+    <rule ref="Generic.Classes.DuplicateClassName"/>
+
+    <!-- statements may not have an empty body -->
+    <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+
+    <!-- usage of for loop that could be simplified as a while loop (no instatiation or incrementation) -->
+    <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop"/>
+
+    <!-- usage of function as test criteria in loops (-> save to variable first) -->
+    <rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall"/>
+
+    <!-- Reports cases where incrementer jumbling might happen in 'for' loops. -->
+    <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
+
+    <!-- if/else clause may not be unconditional -->
+    <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+
+    <!-- no unnecessary final modifiers inside final classes -->
+    <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
+
+    <!-- function parameter not used within function -->
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+
+    <!-- unnecessary override of method since only call of parent -->
+    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+
+    <!-- in production code there shouldn't be any todo or fixme left over -->
+    <rule ref="Generic.Commenting.Todo"/>
+    <rule ref="Generic.Commenting.Fixme"/>
+
+    <!-- using braces is mandatory for control structures -->
+    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+
+    <!-- Reports cases where a byte order mark is found in any PHP file to avoid application failures. -->
+    <rule ref="Generic.Files.ByteOrderMark"/>
+
+    <!-- only UNIX file endings allowed -->
+    <rule ref="Generic.Files.LineEndings"/>
+
+    <!-- only 120 characters per line allowed. No warnings at 80 as in default -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="120"/>
+        </properties>
+    </rule>
+
+    <!-- only one class or interface allowed per file -->
+    <rule ref="Generic.Files.OneClassPerFile"/>
+    <rule ref="Generic.Files.OneInterfacePerFile"/>
+
+    <!-- mandatory space after cast -->
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+
+    <!-- call-time pass-by-reference not allowed -->
+    <rule ref="Generic.Functions.CallTimePassByReference"/>
+
+    <!-- arguments within function calls shall be divided by exactly one space -->
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
+
+    <!--
+        Checks cyclomativ complexity of functions, functions with complexity of 10 or more will cause a warning,
+        function that exceed complexity of 20 cause errors.
+    -->
+    <rule ref="Generic.Metrics.CyclomaticComplexity"/>
+
+    <!--
+        functions nested deeper than 5 levels will cause a warning, nesting deeper than 10 levels will throw errors.
+    -->
+    <rule ref="Generic.Metrics.NestingLevel"/>
+
+    <!-- constructor naming pre-PHP5 forbidden -->
+    <rule ref="Generic.NamingConventions.ConstructorName"/>
+
+    <!-- Class constants are  always upper cased -->
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+
+    <!-- PHP opening tag the first content of a PHP file -->
+    <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag"/>
+
+    <!-- usage of deprecated functions forbidden -->
+    <rule ref="Generic.PHP.DeprecatedFunctions"/>
+
+    <!-- Constants 'true', 'false', 'null' always lower-cased -->
+    <rule ref="Generic.PHP.LowerCaseConstant"/>
+
+    <!-- no silencing (@) operators allowed -->
+    <rule ref="Generic.PHP.NoSilencedErrors"/>
+
+    <!-- strings must not be concattenated when not necessary -->
+    <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
+
+    <!-- indentation by exactly 4 spaces, tabs not allowed -->
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+    <rule ref="Generic.WhiteSpace.ScopeIndent"/>
+
+    <!-- opening brace of class in new line, correct indentation of inner parts of class -->
+    <rule ref="PEAR.Classes.ClassDeclaration"/>
+
+    <!-- every class needs a class docblock above it -->
+    <rule ref="PEAR.Commenting.ClassComment"/>
+
+    <!-- every PHP file needs a file docblock on top -->
+    <rule ref="PEAR.Commenting.FileComment"/>
+
+    <!-- every function incl. methods must be documented using a docblock -->
+    <rule ref="PEAR.Commenting.FunctionComment"/>
+
+    <!-- no PERL style inline documents using # allowed -->
+    <rule ref="PEAR.Commenting.InlineComment"/>
+
+    <!-- formatting of multi-line control structures -->
+    <rule ref="PEAR.ControlStructures.MultiLineCondition"/>
+
+    <!-- correct usage of include_once, require_once etc. -->
+    <rule ref="PEAR.Files.IncludingFile"/>
+
+    <!-- correct formatting of multi line assignments (= in new line, correctly alligned and indented code -->
+    <rule ref="PEAR.Formatting.MultiLineAssignment"/>
+
+    <!--
+        correct spacing of function calls (no space before brackets, no spaces directly in between brackets, no spaces
+        after brackets, spacing of arguments, correct definition of multi-line function calls)
+    -->
+    <rule ref="PEAR.Functions.FunctionCallSignature"/>
+
+    <!--
+        correct spacing of function declaration (no space before opening brackets, no spaces in between brackets, no
+        spaces after brackets, spacing of arguments, correct definition of multi-line function declaration
+    -->
+    <rule ref="PEAR.Functions.FunctionDeclaration"/>
+
+    <!-- function declaration: parameters with default value follow parameters without default values -->
+    <rule ref="PEAR.Functions.ValidDefaultValue"/>
+
+    <!-- every "word" in class or interface names must be upper cased, divided by underscore or camelcased -->
+    <rule ref="PEAR.NamingConventions.ValidClassName"/>
+
+    <!-- object operators must be indented 4 spaces if they are the first thing on a line -->
+    <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
+
+    <!-- closing braces of scoped must be aligned correctly (same indentation as the opening brace) -->
+    <rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>
+
+    <!-- functions outside of classes not allowed -->
+    <rule ref="Squiz.Functions.GlobalFunction"/>
+
+    <!-- increment and decrement operators cannot be used in an arithmetic operation -->
+    <rule ref="Squiz.Operators.IncrementDecrementUsage"/>
+
+    <!-- commented out code not allowed in product environment -->
+    <rule ref="Squiz.PHP.CommentedOutCode"/>
+
+    <!-- don't allow size check function within loops -> has to be written into variables -->
+    <rule ref="Squiz.PHP.DisallowSizeFunctionsInLoops"/>
+
+    <!-- eval and alias functions (compatibility functions) not allowed in ordinary code -->
+    <rule ref="Squiz.PHP.DiscouragedFunctions"/>
+    <rule ref="Squiz.PHP.Eval"/>
+    <rule ref="Squiz.PHP.ForbiddenFunctions"/>
+
+    <!-- global keyword and nested functions forbidden -->
+    <rule ref="Squiz.PHP.GlobalKeyword"/>
+    <rule ref="Squiz.PHP.InnerFunctions"/>
+
+    <!-- built-in PHP functions are to be used in lowercase -->
+    <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
+
+    <!-- warns about unreachable code (i.e. after return statements) -->
+    <rule ref="Squiz.PHP.NonExecutableCode"/>
+
+    <!-- class variables and methods always need declared scope (public/protected/private) -->
+    <rule ref="Squiz.Scope.MemberVarScope"/>
+    <rule ref="Squiz.Scope.MethodScope"/>
+
+    <!-- $this variable not allowed in static methods -->
+    <rule ref="Squiz.Scope.StaticThisUsage"/>
+
+    <!-- functions are separated by 2 blank lines -->
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing"/>
+
+    <!-- every language construct is seperated from each other with 1 space ("echo 'something';") -->
+    <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+
+    <!-- logical operators are seperated one space from operands -->
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+
+    <!-- member variables of classes are separated by one blank line -->
+    <rule ref="Squiz.WhiteSpace.MemberVarSpacing"/>
+
+    <!-- scope keywords (public/private/protected) exactly one space before keyword -->
+    <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
+
+    <!-- no spaces before semicolons -->
+    <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+
+    <!-- no whitespaces at the beginning or end of file or the end of any lines -->
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+
+    <!-- complete PHP files don't have a closing PHP tag to avoid whitespace problems -->
+    <rule ref="Zend.Files.ClosingTag"/>
+
+    <!--
+        include sniffs by Magento:
+            - Mysql4 not used anymore in Class names of Resource models
+            - Magento classes are not to be instanciated directly
+            - usage of count on collection creates unnecessary database traffic - use getSize() instead
+            - usage of fetchAll on collection can cause serious memory issues
+            - getFirstItem() does not limit the result of collection load to one item
+            - checks loops for performance limiting behaviors like "load" or count calculations
+            - goto discouraged
+            - usage of class variables based on var keyword discouraged
+            - extension of forbidden functions
+            - remote file inclusion is highly discouraged
+            - direct output (print, echo), backticks and exits discouraged
+            - usage of superglobals discouraged
+            - direct usage of MySQL queries discouraged
+            - usage of slow query options (like union, group by) displayed
+            - warning of time consuming regular expression usage
+            - usage of + operator to concatenate two strings discouraged
+            - check if the === operator is used for testing the return value of the strpos PHP function
+    -->
+    <rule ref="vendor/magento-ecg/coding-standard/Ecg/ruleset.xml"/>
+</ruleset>
