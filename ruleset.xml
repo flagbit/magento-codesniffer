@@ -127,7 +127,7 @@
         correct spacing of function calls (no space before brackets, no spaces directly in between brackets, no spaces
         after brackets, spacing of arguments, correct definition of multi-line function calls)
     -->
-    <rule ref="PEAR.Functions.FunctionCallSignature"/>
+    <!--<rule ref="PEAR.Functions.FunctionCallSignature"/>-->
 
     <!--
         correct spacing of function declaration (no space before opening brackets, no spaces in between brackets, no
@@ -226,4 +226,10 @@
             - check if the === operator is used for testing the return value of the strpos PHP function
     -->
     <rule ref="./vendor/magento-ecg/coding-standard/Ecg/ruleset.xml"/>
+
+    <!--
+        include Flagbit custom sniffs for Magento:
+            - multiline-functions' parenthesis from PEAR.Functions.FunctionCallSignature is not being checked fot Magento
+    -->
+    <rule ref="./Flagbit"/>
 </ruleset>
