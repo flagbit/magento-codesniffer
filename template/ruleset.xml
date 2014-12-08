@@ -115,6 +115,7 @@
             - no block instantiation
             - helper instantiation is not recommended
             - usage of php concatenation is discouraged
+            - usage of functions except for whitelisted is forbidden
     -->
     <rule ref="./Flagbit"/>
 
