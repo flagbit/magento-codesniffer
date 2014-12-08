@@ -113,7 +113,8 @@
             - no class, function declarations
             - no model instantiation
             - no block instantiation
-
+            - helper instantiation is not recommended
+            - usage of php concatenation is discouraged
     -->
     <rule ref="./Flagbit"/>
 
