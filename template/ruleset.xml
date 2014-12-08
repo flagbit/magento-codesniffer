@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="flagbit-magento-template-ruleset">
+    <description>Coding Guidelines for Magento templates development within the Flagbit team.</description>
+
+    <!-- statements may not have an empty body -->
+    <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+
+    <!-- usage of for loop that could be simplified as a while loop (no instatiation or incrementation) -->
+    <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop"/>
+
+    <!-- usage of function as test criteria in loops (-> save to variable first) -->
+    <rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall"/>
+
+    <!-- Reports cases where incrementer jumbling might happen in 'for' loops. -->
+    <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
+
+    <!-- if/else clause may not be unconditional -->
+    <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+
+    <!-- unnecessary override of method since only call of parent -->
+    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+
+    <!-- in production code there shouldn't be any todo or fixme left over -->
+    <rule ref="Generic.Commenting.Todo"/>
+    <rule ref="Generic.Commenting.Fixme"/>
+
+    <!-- Reports cases where a byte order mark is found in any PHP file to avoid application failures. -->
+    <rule ref="Generic.Files.ByteOrderMark"/>
+
+    <!-- only UNIX file endings allowed -->
+    <rule ref="Generic.Files.LineEndings"/>
+
+    <!-- mandatory space after cast -->
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+
+    <!-- call-time pass-by-reference not allowed -->
+    <rule ref="Generic.Functions.CallTimePassByReference"/>
+
+    <!-- arguments within function calls shall be divided by exactly one space -->
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
+
+    <!-- usage of deprecated functions forbidden -->
+    <rule ref="Generic.PHP.DeprecatedFunctions"/>
+
+    <!-- Constants 'true', 'false', 'null' always lower-cased -->
+    <rule ref="Generic.PHP.LowerCaseConstant"/>
+
+    <!-- no silencing (@) operators allowed -->
+    <rule ref="Generic.PHP.NoSilencedErrors"/>
+
+    <!-- strings must not be concattenated when not necessary -->
+    <rule ref="Generic.Strings.UnnecessaryStringConcat"/>
+
+    <!-- indentation by exactly 4 spaces, tabs not allowed -->
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+
+    <!-- every PHP file needs a file docblock on top -->
+    <rule ref="PEAR.Commenting.FileComment"/>
+
+    <!-- no PERL style inline documents using # allowed -->
+    <rule ref="PEAR.Commenting.InlineComment"/>
+
+    <!-- correct formatting of multi line assignments (= in new line, correctly alligned and indented code -->
+    <rule ref="PEAR.Formatting.MultiLineAssignment"/>
+
+    <!-- object operators must be indented 4 spaces if they are the first thing on a line -->
+    <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
+
+    <!-- increment and decrement operators cannot be used in an arithmetic operation -->
+    <rule ref="Squiz.Operators.IncrementDecrementUsage"/>
+
+    <!-- commented out code not allowed in product environment -->
+    <rule ref="Squiz.PHP.CommentedOutCode"/>
+
+    <!-- don't allow size check function within loops -> has to be written into variables -->
+    <rule ref="Squiz.PHP.DisallowSizeFunctionsInLoops"/>
+
+    <!-- eval and alias functions (compatibility functions) not allowed in ordinary code -->
+    <rule ref="Squiz.PHP.DiscouragedFunctions"/>
+    <rule ref="Squiz.PHP.Eval"/>
+    <rule ref="Squiz.PHP.ForbiddenFunctions"/>
+
+    <!-- global keyword and nested functions forbidden -->
+    <rule ref="Squiz.PHP.GlobalKeyword"/>
+    <rule ref="Squiz.PHP.InnerFunctions"/>
+
+    <!-- built-in PHP functions are to be used in lowercase -->
+    <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
+
+    <!-- warns about unreachable code (i.e. after return statements) -->
+    <rule ref="Squiz.PHP.NonExecutableCode"/>
+
+    <!-- every language construct is seperated from each other with 1 space ("echo 'something';") -->
+    <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+
+    <!-- logical operators are seperated one space from operands -->
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+
+    <!-- member variables of classes are separated by one blank line -->
+    <rule ref="Squiz.WhiteSpace.MemberVarSpacing"/>
+
+    <!-- no spaces before semicolons -->
+    <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+
+    <!-- no whitespaces at the beginning or end of file or the end of any lines -->
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+
+    <!--
+        Include Flagbit sniffs for templates:
+            - newly declared variables must be underscored
+            - alternative syntax for control structures must be used
+            - correct spacing for the control structures
+            - no class, function declarations
+            - no model instantiation
+            - no block instantiation
+
+    -->
+    <rule ref="./Flagbit"/>
+
+</ruleset>
