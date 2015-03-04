@@ -7,8 +7,10 @@ Usage:
 ------
 
 1. Install ECG rules using composer
-2. phpcs --standard=/path/to/this/folder /path/to/code
-3. phpcs --standard=/path/to/this/folder/template --extensions=phtml /path/to/code
+2. Run `sudo ./install.sh -n <desired-command-name>`(default: `phpcs-run`) to link run.sh to your /usr/bin
+3. Run `phpcs-run -t` if you want to check templates
+4. Run `phpcs-run -e php,phtml` if you want to check some specific file extensions
+5. Note, that `phpcs-run` checks only files, that were modified or added according to git.
 
 Description
 --------
