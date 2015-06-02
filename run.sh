@@ -61,6 +61,11 @@ if [[ $REPORT == 1 ]]; then
     COMMAND=$COMMAND" --report=summary";
 fi
 
+# apply extension filter
+if [[ ${#EXTENSIONS} -gt 0 ]]; then
+    COMMAND=$COMMAND" --extensions="$EXTENSIONS;
+fi
+
 #TARGET="./*";
 
 if [[ $GIT_MODE == 1 ]]; then
