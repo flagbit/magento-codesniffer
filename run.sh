@@ -1,7 +1,17 @@
 #!/bin/bash
 
+# todo:
+# - summary parameter
+# - non-git mode parameter (or git-mode marameter)
+# - exclude non php files by default
+# - help
+#
+
+# default file extensions
+EXTENSIONS="php,phtml";
+
 # read options
-while getopts "t?s:e:" opt; do
+while getopts "t?r?g?s:e:" opt; do
   case $opt in
     s) # standard
       STANDARD=$OPTARG >&2
@@ -12,6 +22,12 @@ while getopts "t?s:e:" opt; do
     t) # template mode
       TEMPLATE_MODE=1;
       EXTENSIONS="phtml";
+      ;;
+    r) # report only
+      REPORT=1;
+      ;;
+    g) # git mode
+      GIT_MODE=1;
       ;;
     :)
       echo "Option -$OPTARG requires an argument." >&2
@@ -35,33 +51,53 @@ if [ ${#STANDARD} -lt 1 ]; then
 
 fi
 
-# get list of changed and untracked files
-for FILE in $( git status --porcelain ); do
+COMMAND="phpcs";
 
-    if [ ${#FILE} -gt 2 ]; then
+# apply standard path
+COMMAND=$COMMAND" --standard=$STANDARD";
 
-        COMMAND="phpcs";
+# show report only
+if [[ $REPORT == 1 ]]; then
+    COMMAND=$COMMAND" --report=summary";
+fi
 
-        # if the file has none of the specified extensions we skip it
-        if [ ${#EXTENSIONS} -gt 0 ]; then
+#TARGET="./*";
 
-            # get extension of the current file
-            FILENAME=$(basename "$FILE");
-            EXT="${FILENAME##*.}";
+if [[ $GIT_MODE == 1 ]]; then
 
-            if [[ $EXTENSIONS !=  *$EXT* ]]; then
-                continue;
+    # get list of changed and untracked files
+    FILES=$( git status --porcelain );
+
+    for FILE in ${FILES}; do
+
+        if [ ${#FILE} -gt 2 ]; then
+
+            # if the file has none of the specified extensions we skip it
+            if [ ${#EXTENSIONS} -gt 0 ]; then
+
+                # get extension of the current file
+                FILENAME=$(basename "$FILE");
+                EXT="${FILENAME##*.}";
+
+                if [[ $EXTENSIONS !=  *$EXT* ]]; then
+                    continue;
+                fi
+#
             fi
+
+            TARGET=$TARGET" "$FILE;
+
         fi
 
-        # apply standard path if it's been specified
-        if [ ${#STANDARD} -gt 0 ]; then
-            COMMAND=$COMMAND" --standard=$STANDARD";
-        fi
+    done;
+else
+    TARGET=$BASH_ARGV;
+fi
 
-        # execute the command
-        $COMMAND $FILE;
+#in case target was not specified
+if [ ${#TARGET} -lt 3 ]; then
+    TARGET="./*"
+fi
 
-    fi
-
-done;
+# execute the command
+$COMMAND $TARGET;

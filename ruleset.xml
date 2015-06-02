@@ -181,6 +181,9 @@
     <!-- $this variable not allowed in static methods -->
     <rule ref="Squiz.Scope.StaticThisUsage"/>
 
+    <!-- Controls structure spacing (if-else, foreach, while, switch, do) -->
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing"/>
+
     <!-- functions are separated by 2 blank lines -->
     <rule ref="Squiz.WhiteSpace.FunctionSpacing"/>
 
@@ -216,9 +219,9 @@
             - goto discouraged
             - usage of class variables based on var keyword discouraged
             - extension of forbidden functions
-            - remote file inclusion is highly discouraged
-            - direct output (print, echo), backticks and exits discouraged
-            - usage of superglobals discouraged
+            - remote file inclusion is higbackticks and exits discouraged
+            - usage of superglobals discourahly discouraged
+            - direct output (print, echo), ged
             - direct usage of MySQL queries discouraged
             - usage of slow query options (like union, group by) displayed
             - warning of time consuming regular expression usage
