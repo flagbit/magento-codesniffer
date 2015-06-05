@@ -1,5 +1,5 @@
 <?php
-class Flagbit_Sniffs_Magento_Template_NoConcatenationSniff implements PHP_CodeSniffer_Sniff
+class Flagbit_Sniffs_Magento_Template_NoConcatenationSniff extends Flagbit_Sniffs_Magento_Template_AbstractSniff
 {
 
 
@@ -9,10 +9,10 @@ class Flagbit_Sniffs_Magento_Template_NoConcatenationSniff implements PHP_CodeSn
     }
 
 
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    protected function _process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
         $phpcsFile->addWarning('Usage of PHP concatenation is discouraged', $stackPtr);
-}
+    }
 
 
 }

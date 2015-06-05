@@ -235,4 +235,8 @@
             - multiline-functions' parenthesis from PEAR.Functions.FunctionCallSignature is not being checked fot Magento
     -->
     <rule ref="./Flagbit"/>
+
+    <!-- Include sniffs for magento templates -->
+    <rule ref="./template"/>
+
 </ruleset>

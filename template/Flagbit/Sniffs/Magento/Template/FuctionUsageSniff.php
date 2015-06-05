@@ -3,7 +3,7 @@
 /**
  * Class Flagbit_Sniffs_Magento_Template_FuctionUsageSniff
  */
-class Flagbit_Sniffs_Magento_Template_FuctionUsageSniff implements PHP_CodeSniffer_Sniff
+class Flagbit_Sniffs_Magento_Template_FuctionUsageSniff extends Flagbit_Sniffs_Magento_Template_AbstractSniff
 {
 
     protected $_allowedFunctions = array(
@@ -16,7 +16,7 @@ class Flagbit_Sniffs_Magento_Template_FuctionUsageSniff implements PHP_CodeSniff
     }
 
 
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    protected function _process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 

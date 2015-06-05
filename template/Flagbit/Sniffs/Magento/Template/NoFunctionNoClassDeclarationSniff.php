@@ -3,7 +3,8 @@
 /**
  * Class Flagbit_Sniffs_Magento_Template_NoFunctionNoClassDeclarationSniff
  */
-class Flagbit_Sniffs_Magento_Template_NoFunctionNoClassDeclarationSniff implements PHP_CodeSniffer_Sniff
+class Flagbit_Sniffs_Magento_Template_NoFunctionNoClassDeclarationSniff
+    extends Flagbit_Sniffs_Magento_Template_AbstractSniff
 {
 
 
@@ -13,7 +14,7 @@ class Flagbit_Sniffs_Magento_Template_NoFunctionNoClassDeclarationSniff implemen
     }
 
 
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    protected function _process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 
