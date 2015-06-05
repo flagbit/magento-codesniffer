@@ -144,9 +144,6 @@
     <!-- object operators must be indented 4 spaces if they are the first thing on a line -->
     <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
 
-    <!-- closing braces of scoped must be aligned correctly (same indentation as the opening brace) -->
-    <rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>
-
     <!-- functions outside of classes not allowed -->
     <rule ref="Squiz.Functions.GlobalFunction"/>
 
