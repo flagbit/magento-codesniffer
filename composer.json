@@ -1,5 +1,35 @@
 {
-  "require": {
-    "magento-ecg/coding-standard": "dev-master"
-  }
+    "name": "flagbit/magento-codesniffer",
+    "license": "GPL-3.0",
+    "description": "Code Sniffer rules for Magento-based projects at Flagbit",
+    "homepage": "https://github.com/Flagbit/magento-codesniffer",
+    "require": {
+        "magento-ecg/coding-standard": "~1"
+    },
+    "authors": [
+        {
+            "name":"Oleh Kravets",
+            "email":"oleh.kravets@flagbit.de",
+            "homepage":"http://www.flagbit.de/",
+            "role": "Developer"
+        },
+        {
+          "name":"David Paz",
+          "email":"david.paz@flagbit.de",
+          "homepage":"http://www.flagbit.de/",
+          "role": "Developer"
+        },
+        {
+          "name":"Rolf Kaiser",
+          "email":"rolf.kaiser@flagbit.de",
+          "homepage":"http://www.flagbit.de/",
+          "role": "Developer"
+        },
+        {
+          "name":"Michael Türk",
+          "email":"michael.tuerk@flagbit.de",
+          "homepage":"http://www.flagbit.de/",
+          "role": "Developer"
+        }
+    ]
 }
