@@ -4,7 +4,7 @@
  * Class Flagbit_Sniffs_Magento_Template_NoFunctionNoClassDeclarationSniff
  */
 class Flagbit_Sniffs_Magento_Template_NoFunctionNoClassDeclarationSniff
-    extends Flagbit_Sniffs_Magento_Template_AbstractSniff
+    extends Flagbit_Sniffs_Magento_AbstractSniff
 {
 
 

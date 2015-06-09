@@ -1,5 +1,5 @@
 <?php
-class Flagbit_Sniffs_Magento_Template_NoModelInstantiationSniff extends Flagbit_Sniffs_Magento_Template_AbstractSniff
+class Flagbit_Sniffs_Magento_Template_NoModelInstantiationSniff extends Flagbit_Sniffs_Magento_AbstractSniff
 {
 
 
