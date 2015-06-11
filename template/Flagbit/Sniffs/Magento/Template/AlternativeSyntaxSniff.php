@@ -3,7 +3,7 @@
 /**
  * Class Flagbit_Sniffs_Magento_Template_AlternativeSyntaxSniff
  */
-class Flagbit_Sniffs_Magento_Template_AlternativeSyntaxSniff extends Flagbit_Sniffs_Magento_AbstractSniff
+class Flagbit_Sniffs_Magento_Template_AlternativeSyntaxSniff extends Flagbit_Sniffs_Magento_Template_AbstractSniff
 {
 
 
