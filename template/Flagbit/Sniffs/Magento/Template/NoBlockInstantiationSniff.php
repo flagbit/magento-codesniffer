@@ -1,4 +1,7 @@
 <?php
+
+require_once("AbstractSniff.php");
+
 class Flagbit_Sniffs_Magento_Template_NoBlockInstantiationSniff extends Flagbit_Sniffs_Magento_Template_AbstractSniff
 {
 

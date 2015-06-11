@@ -1,5 +1,7 @@
 <?php
 
+require_once("AbstractSniff.php");
+
 /**
  * Class Flagbit_Sniffs_Magento_Template_AlternativeSyntaxSniff
  */

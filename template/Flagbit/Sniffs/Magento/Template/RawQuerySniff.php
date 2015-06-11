@@ -1,5 +1,7 @@
 <?php
 
+require_once("AbstractSniff.php");
+
 class Flagbit_Sniffs_Magento_Template_RawQuerySniff extends Flagbit_Sniffs_Magento_Template_AbstractSniff
 {
     public $statements = array(
