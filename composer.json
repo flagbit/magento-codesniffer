@@ -4,7 +4,8 @@
     "description": "Code Sniffer rules for Magento-based projects at Flagbit",
     "homepage": "https://github.com/Flagbit/magento-codesniffer",
     "require": {
-        "magento-ecg/coding-standard": "~1"
+        "magento-ecg/coding-standard": "~1",
+        "squizlabs/php_codesniffer": "2.3.*"
     },
     "authors": [
         {
