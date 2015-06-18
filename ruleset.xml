@@ -109,7 +109,7 @@
     <rule ref="PEAR.Commenting.FileComment"/>
 
     <!-- every function incl. methods must be documented using a docblock -->
-    <rule ref="PEAR.Commenting.FunctionComment"/>
+    <!--<rule ref="PEAR.Commenting.FunctionComment"/>-->
 
     <!-- no PERL style inline documents using # allowed -->
     <rule ref="PEAR.Commenting.InlineComment"/>
