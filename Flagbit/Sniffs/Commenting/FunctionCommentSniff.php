@@ -64,8 +64,8 @@ class Flagbit_Sniffs_Commenting_FunctionCommentSniff extends PEAR_Sniffs_Comment
                             }
                         }
                     } else {
-                        $error = 'Missing parameter comment';
-                        $phpcsFile->addError($error, $tag, 'MissingParamComment');
+//                        $error = 'Missing parameter comment';
+//                        $phpcsFile->addError($error, $tag, 'MissingParamComment');
                     }
                 } else {
                     $error = 'Missing parameter name';
