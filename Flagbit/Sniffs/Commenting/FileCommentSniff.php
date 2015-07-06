@@ -128,9 +128,4 @@ class Flagbit_Sniffs_Commenting_FileCommentSniff extends PEAR_Sniffs_Commenting_
 
     }//end processCopyright()
 
-    protected function processVersion(PHP_CodeSniffer_File $phpcsFile, array $tags)
-    {
-
-    }
-
 }

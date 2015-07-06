@@ -103,7 +103,7 @@
     <rule ref="PEAR.Classes.ClassDeclaration"/>
 
     <!-- every class needs a class docblock above it -->
-    <rule ref="PEAR.Commenting.ClassComment"/>
+    <!--<rule ref="PEAR.Commenting.ClassComment"/>-->
 
     <!-- every PHP file needs a file docblock on top -->
     <!--<rule ref="PEAR.Commenting.FileComment"/>-->
