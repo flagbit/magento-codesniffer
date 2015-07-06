@@ -54,9 +54,6 @@
     <!-- indentation by exactly 4 spaces, tabs not allowed -->
     <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
 
-    <!-- every PHP file needs a file docblock on top -->
-    <rule ref="PEAR.Commenting.FileComment"/>
-
     <!-- no PERL style inline documents using # allowed -->
     <rule ref="PEAR.Commenting.InlineComment"/>
 
@@ -118,5 +115,9 @@
             - usage of functions except for whitelisted is forbidden
     -->
     <rule ref="./Flagbit"/>
+
+    <!-- every PHP file needs a file docblock on top -->
+    <!-- Replaces PEAR.Commenting.FileComment -->
+    <rule ref="../Flagbit/Sniffs/Commenting/FileCommentSniff.php" />
 
 </ruleset>
