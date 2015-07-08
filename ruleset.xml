@@ -225,7 +225,7 @@
             - usage of + operator to concatenate two strings discouraged
             - check if the === operator is used for testing the return value of the strpos PHP function
     -->
-    <rule ref="./vendor/magento-ecg/coding-standard/Ecg/ruleset.xml"/>
+    <rule ref="./../../magento-ecg/coding-standard/Ecg/ruleset.xml"/>
 
     <!--
         include Flagbit custom sniffs for Magento:
