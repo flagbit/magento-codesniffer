@@ -132,7 +132,9 @@ class Flagbit_Sniffs_Magento_Template_ControlStructureSpacingSniff extends Flagb
             $colonPtr = $phpcsFile->findNext(array(T_COLON), $stackPtr + 1);
         }
 
-        $this->_checkCloseTag($phpcsFile, $colonPtr);
+        if (!$colonPtr) {
+            return;
+        }
 
         // check spaces before colon
         if ($tokens[$colonPtr - 1]['code'] == T_WHITESPACE) {
@@ -235,5 +237,35 @@ class Flagbit_Sniffs_Magento_Template_ControlStructureSpacingSniff extends Flagb
                 'The line must end with PHP close tag', $lastPtr
             );
         }
+
+        // check if there are any other tokens between the colon and closing tag
+        if ($this->_checkForNonWhitespaces($phpcsFile, $lastPtr, $closeTag)) {
+            $phpcsFile->addWarning('No tokens are allowed between structure and close tag', $lastPtr);
+        }
     }
+
+
+    /**
+     * Check token range for non-whitespaces
+     *
+     * @param $phpcsFile
+     * @param int $startPtr
+     * @param int $endPtr
+     *
+     * @return bool
+     */
+    protected function _checkForNonWhitespaces($phpcsFile, $startPtr, $endPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        for ($startPtr++; $startPtr < $endPtr ; $startPtr++) {
+            if ($tokens[$startPtr]['code'] !== T_WHITESPACE) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
 }
