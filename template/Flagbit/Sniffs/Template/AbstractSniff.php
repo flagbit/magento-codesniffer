@@ -1,5 +1,5 @@
 <?php
-abstract class Flagbit_Sniffs_Magento_Template_AbstractSniff implements PHP_CodeSniffer_Sniff
+abstract class Flagbit_Sniffs_Template_AbstractSniff implements PHP_CodeSniffer_Sniff
 {
 
     protected $_templateExtensions = array('phtml');

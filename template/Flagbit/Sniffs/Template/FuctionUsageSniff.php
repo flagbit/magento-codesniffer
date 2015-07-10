@@ -3,9 +3,9 @@
 require_once("AbstractSniff.php");
 
 /**
- * Class Flagbit_Sniffs_Magento_Template_FuctionUsageSniff
+ * Class Flagbit_Sniffs_Template_FuctionUsageSniff
  */
-class Flagbit_Sniffs_Magento_Template_FuctionUsageSniff extends Flagbit_Sniffs_Magento_Template_AbstractSniff
+class Flagbit_Sniffs_Template_FuctionUsageSniff extends Flagbit_Sniffs_Template_AbstractSniff
 {
 
     protected $_allowedFunctions = array(

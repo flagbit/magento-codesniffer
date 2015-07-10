@@ -2,7 +2,7 @@
 
 require_once("AbstractSniff.php");
 
-class Flagbit_Sniffs_Magento_Template_NoConcatenationSniff extends Flagbit_Sniffs_Magento_Template_AbstractSniff
+class Flagbit_Sniffs_Template_NoConcatenationSniff extends Flagbit_Sniffs_Template_AbstractSniff
 {
 
 
